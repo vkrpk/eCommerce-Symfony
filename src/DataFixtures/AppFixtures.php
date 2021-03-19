@@ -5,8 +5,6 @@ namespace App\DataFixtures;
 use Faker\Factory;
 use App\Entity\Product;
 use App\Entity\Category;
-use WW\Faker\Provider\Picture;
-use Bluemmb\Faker\PicsumPhotosProvider;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Symfony\Component\String\Slugger\SluggerInterface;
@@ -26,8 +24,6 @@ class AppFixtures extends Fixture
         $faker->addProvider(new \Liior\Faker\Prices($faker));
         $faker->addProvider(new \Bezhanov\Faker\Provider\Commerce($faker));
         $faker->addProvider(new \Bluemmb\Faker\PicsumPhotosProvider($faker));
-        // $faker->addProvider(new \Bluemmb\Faker\PicsumPhotosProvider($faker));
-        // $faker->addProvider(new \WW\Faker\Provider\Picture($faker));
 
         for ($c = 0; $c < 3; $c++) {
             $category = new Category();
