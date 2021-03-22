@@ -39,6 +39,7 @@ class ProductType extends AbstractType
             ])
             ->add('mainPicture', UrlType::class, [
                 'label' => 'Image du produit',
+                'default_protocol' => '',
                 'attr' => [
                     'placeholder' => 'Tapez une Url d\'image!'
                 ]

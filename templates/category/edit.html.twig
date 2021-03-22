@@ -10,9 +10,15 @@
 		{{category.name}}
 	</h1>
 
-	{{ form_start(formView) }}
+	{{ form_start(formView, {"attr": {"novalidate":"novalidate"}}) }}
 
-	{{ form_widget(formView.name) }}
+	<div class="row">
+		<div class="col">
+			{{ form_row(formView.name) }}
+		</div>
+	</div>
+
+	{{ form_errors(formView) }}
 
 	<button type="submit" class="btn btn-primary">
 		<i class="fas fa-save"></i>
@@ -21,4 +27,13 @@
 
 	{{ form_end(formView) }}
 
+{% endblock %}
+
+{% block form_row %}
+	<div class="form-group">
+		{{ form_label(form) }}
+		{{ form_widget(form, {'attr': {'class': 'form-control'} }) }}
+		{{ form_help(form) }}
+		{{ form_errors(form) }}
+	</div>
 {% endblock %}
