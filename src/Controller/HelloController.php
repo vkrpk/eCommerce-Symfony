@@ -27,20 +27,20 @@ class HelloController
     public function hello($prenom = "World", LoggerInterface $logger, Calculator $calculator, Slugify $slugify, Environment $twig, Detector $detector)
     {
 
-        dump($detector->detect(101));
-        dump($detector->detect(99));
+        // dump($detector->detect(101));
+        // dump($detector->detect(99));
 
-        dump($twig);
+        // dump($twig);
 
         $slugify = new Slugify();
 
-        dump($slugify->slugify("Hello World"));
+        // dump($slugify->slugify("Hello World"));
 
         $logger->error("Mon message de log !");
 
         $tva = $this->calculator->calcul(100);
 
-        dump($tva);
+        // dump($tva);
 
         return new Response("Hello $prenom");
     }
